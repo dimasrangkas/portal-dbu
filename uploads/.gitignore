@@ -1,0 +1,4 @@
+# Berkas unggahan pengguna tidak ikut disimpan di git.
+*
+!.gitignore
+!.htaccess

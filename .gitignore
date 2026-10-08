@@ -1,0 +1,24 @@
+# Penyesuaian per server — jangan dilacak, jangan ditimpa saat deploy.
+shared/config.php
+frontend/bootstrap.php
+DESIGN.md
+IMPLEMENTATION.md
+MEMORY.md
+PRD.md
+database/DEPLOY.md
+
+# Berkas unggahan CMS diatur oleh uploads/.gitignore.
+
+# Sampah sistem & editor.
+.DS_Store
+Thumbs.db
+*.log
+
+# Cadangan basis data hasil kerja lokal — bukan bagian aplikasi.
+database/backup/
+
+# Dump mysqldump yang dibuat saat deploy. Sering jatuh di akar proyek karena
+# perintahnya dijalankan dari sana; jangan sampai ikut ter-commit — isinya
+# seluruh data situs.
+backup-*.sql
+*.sql.gz

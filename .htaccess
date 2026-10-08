@@ -1,0 +1,23 @@
+# ============================================================
+#  Direktorat Bandar Udara — aturan URL
+#  Alamat halaman ditulis tanpa akhiran .php, mis. /frontend/pages/profil
+# ============================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Biarkan berkas dan folder yang memang ada (css, js, gambar, unggahan).
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # /pages/profil  ->  /pages/profil.php
+  RewriteCond %{REQUEST_FILENAME}.php -f
+  RewriteRule ^(.+?)/?$ $1.php [L]
+</IfModule>
+
+# Jangan tampilkan isi folder.
+Options -Indexes
+
+# Halaman awal folder.
+DirectoryIndex index.php index.html
